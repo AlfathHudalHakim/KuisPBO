@@ -16,7 +16,7 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner masuk = new Scanner (System.in);
-        double struktur, visual, design, jurnal, relevan, solving;
+        double struktur=0, visual=0, design=0, jurnal=0, relevan=0, solving=0, hasil1=0, hasil2=0;
         String nama;
         int pil, usia;
         System.out.println("+-------------------------------------------+");
@@ -30,8 +30,9 @@ public class Main {
         pil = masuk.nextInt();
         if (pil == 1) {
             System.out.println(" ### Form Pendaftaran ### ");
+            Scanner khusus = new Scanner(System.in);
             System.out.print("Masukan Nama   : ");
-            nama = masuk.nextLine();
+            nama = khusus.nextLine();
 
             System.out.print("Usia   : ");
             usia = masuk.nextInt();
@@ -55,12 +56,11 @@ public class Main {
                 System.out.print("menu : ");
                 pil = masuk.nextInt();
                 if (pil == 1) {
-                    double hasil2;
                     Seleksi sel;
                     sel = new Seleksi (struktur, visual, design, jurnal, relevan, solving, hasil1, hasil2);
                     hasil2 = sel.hasil2();
                     System.out.println("Nilai Akhir : " + hasil2);
-                    if (hasil2 >= 87,5 && usia>=16 && usia <=24) {
+                    if (hasil2 >= 87.5 && usia>=16 && usia <=24) {
                         System.out.println("Keterangan : DITERIMA");
                         System.out.println("SELAMAT! " + nama + "(" + usia + ") dinyatakan diterma pada PROGRAM BEASISWA PELAJAR karena telah memenuhi syarat tahap seleksi!");
                     }
@@ -87,13 +87,14 @@ public class Main {
 
         }
         else if (pil == 2) {
-            System.out.println(" ### Form Pendaftaran ### ");
+            Scanner khusus = new Scanner(System.in);
             System.out.print("Masukan Nama   : ");
-            nama = masuk.nextLine();
+            nama = khusus.nextLine();
 
             System.out.print("Usia   : ");
             usia = masuk.nextInt();
             do {
+                    
                 System.out.println(" ### Form Penilaian ### ");
                 System.out.println("Ket: Nilai yang Valid antara 1-100");
                 System.out.print("Nilai Struktur dan Konten Jurnal   : ");
@@ -113,12 +114,11 @@ public class Main {
                 System.out.print("menu : ");
                 pil = masuk.nextInt();
                 if (pil == 1) {
-                    double hasil1;
                     Seleksi sel;
                     sel = new Seleksi (struktur, visual, design, jurnal, relevan, solving, hasil1, hasil2);
                     hasil1 = sel.hasil1();
                     System.out.println("Nilai Akhir : " + hasil1);
-                    if (hasil1 >= 87,5 && usia>=16 && usia <=24) {
+                    if (hasil1 >= 87.5 && usia>=16 && usia <=24) {
                         System.out.println("Keterangan : DITERIMA");
                         System.out.println("SELAMAT! " + nama + "(" + usia + ") dinyatakan diterma pada PROGRAM BEASISWA PELAJAR karena telah memenuhi syarat tahap seleksi!");
                     }
